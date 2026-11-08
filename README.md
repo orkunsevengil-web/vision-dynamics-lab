@@ -8,7 +8,9 @@ How closely does a physics model reproduce motion measured in video? This projec
 
 Requires Python 3.10 or newer. Each input CSV must have `time_s` and `position_m` columns. Supply elapsed time and displacement along the incline, both starting at zero at release. Use a different recording for validation.
 
-    python validate.py calibration.csv validation.csv --calibration-angle 20 --validation-angle 25
+    python validate.py examples/calibration.csv examples/validation.csv --calibration-angle 20 --validation-angle 25
+
+The bundled CSVs contain synthetic example trajectories. The calibration example uses a kinetic friction coefficient of 0.20. The validation example uses a different angle and includes a small synthetic measurement offset.
 
 The program writes a comparison CSV and reports fitted friction, mean absolute position error and root mean squared position error. The model assumes straight-line sliding with constant kinetic friction.
 
